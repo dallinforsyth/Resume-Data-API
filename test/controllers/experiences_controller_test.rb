@@ -15,4 +15,12 @@ class ExperiencesControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/experiences/#{Experience.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["id", "start_date", "end_date", "job_title", "company_name", "details", "created_at", "updated_at"], data.keys
+  end
 end

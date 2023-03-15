@@ -14,4 +14,9 @@ class ExperiencesController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @experience = Experience.find_by(id: params[:id])
+    render :show
+  end
 end
