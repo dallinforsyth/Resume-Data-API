@@ -36,4 +36,11 @@ class ExperiencesControllerTest < ActionDispatch::IntegrationTest
     assert_equal experience.company_name, data["company_name"]
     assert_equal experience.details, data["details"]
   end
+
+  test "destroy" do
+    assert_difference "Experience.count", -1 do
+      delete "/experiences/#{Experience.first.id}.json"
+      assert_response 200
+    end
+  end
 end
