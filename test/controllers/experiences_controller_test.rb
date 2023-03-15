@@ -23,4 +23,17 @@ class ExperiencesControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal ["id", "start_date", "end_date", "job_title", "company_name", "details", "created_at", "updated_at"], data.keys
   end
+
+  test "update" do
+    experience = Experience.first
+    patch "/experiences/#{experience.id}.json", params: { job_title: "Updated job_title" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "Updated job_title", data["job_title"]
+    assert_equal experience.start_date, data["start_date"]
+    assert_equal experience.end_date, data["end_date"]
+    assert_equal experience.company_name, data["company_name"]
+    assert_equal experience.details, data["details"]
+  end
 end
