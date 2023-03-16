@@ -1,7 +1,45 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Student.create!(
+  id: 1,
+  first_name: "Michael",
+  last_name: "Scott",
+  email: "michael@test.com",
+  phone_number: "888-555-5556",
+  short_bio: "I sell the best paper at the best paper company in the world",
+  linkedin_url: "https://www.linkedin/in/michaelscott",
+  twitter_handle: "MichaelScott",
+  personal_blog_website_url: "test.com",
+  online_resume_url: "test.com",
+  github_url: "https://github.com/michaelscott",
+  photo: "test.jpg",
+  password: "password",
+)
+Student.create!(
+  id: 2,
+  first_name: "Ricky",
+  last_name: "Bobby",
+  email: "ricky@test.com",
+  phone_number: "888-555-5555",
+  short_bio: "I'm the best nascar driver alive!",
+  linkedin_url: "https://www.linkedin/in/rickybobby",
+  twitter_handle: "rickybobby",
+  personal_blog_website_url: "test.com",
+  online_resume_url: "test.com",
+  github_url: "https://github.com/rickybobby",
+  photo: "test.jpg",
+  password: "password",
+)
+Student.create(
+  id: 3,
+  first_name: "Dale",
+  last_name: "Doback",
+  email: "dale@test.com",
+  phone_number: "888-555-5557",
+  short_bio: "I love to free load off of my father, and play the drums. I also hate Brennan Huff!",
+  linkedin_url: "https://www.linkedin/in/daledoback",
+  twitter_handle: "DaleDoback",
+  personal_blog_website_url: "test.com",
+  online_resume_url: "test.com",
+  github_url: "https://github.com/daledoback",
+  photo: "test.jpg",
+  password: "password",
+)

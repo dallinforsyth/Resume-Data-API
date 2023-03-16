@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   get "/students/:id" => "students#show"
   patch "/students/:id" => "students#update"
   delete "/students/:id" => "students#destroy"
-  post "/users" => "users#create"
   post "/sessions" => "sessions#create"
 end

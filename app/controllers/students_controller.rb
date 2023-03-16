@@ -15,7 +15,8 @@ class StudentsController < ApplicationController
       twitter_handle: params[:twitter_handle],
       personal_blog_website_url: params[:personal_blog_website_url],
       github_url: params[:github_url],
-      password_digest: params[:password_digest],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
     )
     @student.update(online_resume_url: "https://localhost:5173/students/#{@student.id}")
     render :show
