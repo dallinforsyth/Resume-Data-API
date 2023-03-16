@@ -1,2 +1,5 @@
-json.extract! capstone, :id, :created_at, :updated_at
-json.url capstone_url(capstone, format: :json)
+json.id capstone.id
+json.name capstone.name
+json.description capstone.description
+json.url capstone.url
+json.screenshot capstone.screenshot
