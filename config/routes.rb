@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  Education
+  get "/educations" => "educations#index"
+  get "/educations/:id" => "educations#show"
+  post "/educations" => "educations#create"
+  patch "/educations/:id" => "educations#update"
+  delete "/educations/:id" => "educations#destroy"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   get "/experiences" => "experiences#index"
   post "/experiences" => "experiences#create"
   get "/experiences/:id" => "experiences#show"
@@ -14,4 +17,10 @@ Rails.application.routes.draw do
   get "/skills/:id" => "skills#show"
   patch "/skills/:id" => "skills#update"
   delete "/skills/:id" => "skills#destroy"
+  
+  get "/capstones" => "capstones#index"
+  get "/capstones/:id" => "capstones#show"
+  post "/capstones" => "capstones#create"
+  patch "/capstones/:id" => "capstones#update"
+  delete "/capstones/:id" => "capstones#destroy"
 end
