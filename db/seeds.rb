@@ -1,3 +1,48 @@
+Student.create!(
+  id: 1,
+  first_name: "Michael",
+  last_name: "Scott",
+  email: "michael@test.com",
+  phone_number: "888-555-5556",
+  short_bio: "I sell the best paper at the best paper company in the world",
+  linkedin_url: "https://www.linkedin/in/michaelscott",
+  twitter_handle: "MichaelScott",
+  personal_blog_website_url: "test.com",
+  online_resume_url: "test.com",
+  github_url: "https://github.com/michaelscott",
+  photo: "test.jpg",
+  password: "password",
+)
+Student.create!(
+  id: 2,
+  first_name: "Ricky",
+  last_name: "Bobby",
+  email: "ricky@test.com",
+  phone_number: "888-555-5555",
+  short_bio: "I'm the best nascar driver alive!",
+  linkedin_url: "https://www.linkedin/in/rickybobby",
+  twitter_handle: "rickybobby",
+  personal_blog_website_url: "test.com",
+  online_resume_url: "test.com",
+  github_url: "https://github.com/rickybobby",
+  photo: "test.jpg",
+  password: "password",
+)
+Student.create(
+  id: 3,
+  first_name: "Dale",
+  last_name: "Doback",
+  email: "dale@test.com",
+  phone_number: "888-555-5557",
+  short_bio: "I love to free load off of my father, and play the drums. I also hate Brennan Huff!",
+  linkedin_url: "https://www.linkedin/in/daledoback",
+  twitter_handle: "DaleDoback",
+  personal_blog_website_url: "test.com",
+  online_resume_url: "test.com",
+  github_url: "https://github.com/daledoback",
+  photo: "test.jpg",
+  password: "password",
+)
 education1 = Education.create!(start_date: "04/04/04", end_date: "08/08/08", degree: "High School", university_name: "Mizzou", details: "The school is fluent in japanese, and allows everyone to eat bagel bites")
 education2 = Education.create!(start_date: "05/05/05", end_date: "10/10/10", degree: "Batcholers", university_name: "louisiana state", details: "The school is fluent in japanese, and allows everyone to eat bagel bites
   ;0")
