@@ -11,4 +11,11 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal Skill.count, data.length
   end
+
+  test "create" do
+    assert_difference "Skill.count", 1 do
+      post "/skills.json", params: { name: "lake" }
+      assert_response 200
+    end
+  end
 end
