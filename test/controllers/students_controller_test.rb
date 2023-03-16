@@ -21,6 +21,25 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "personal_blog_website_url", "online_resume_url", "github_url", "photo", "password_digest", "created_at", "updated_at"], data.keys
+    assert_equal ["id", "first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "personal_blog_website_url", "online_resume_url", "github_url", "photo", "created_at", "updated_at"], data.keys
+  end
+
+  test "update" do
+    student = Student.first
+    patch "/students/#{student.id}.json", params: { first_name: "updated first_name" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "updated first_name", data["first_name"]
+    assert_equal student.last_name, data["last_name"]
+    assert_equal student.email, data["email"]
+    assert_equal student.phone_number, data["phone_number"]
+    assert_equal student.short_bio, data["short_bio"]
+    assert_equal student.linkedin_url, data["linkedin_url"]
+    assert_equal student.twitter_handle, data["twitter_handle"]
+    assert_equal student.personal_blog_website_url, data["personal_blog_website_url"]
+    assert_equal student.online_resume_url, data["online_resume_url"]
+    assert_equal student.github_url, data["github_url"]
+    assert_equal student.photo, data["photo"]
   end
 end
