@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get "/experiences/:id" => "experiences#show"
   patch "/experiences/:id" => "experiences#update"
   delete "/experiences/:id" => "experiences#destroy"
+
+  get "/skills" => "skills#index"
 end
