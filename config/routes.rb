@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- Education
+  Education
   get "/educations" => "educations#index"
   get "/educations/:id" => "educations#show"
   post "/educations" => "educations#create"
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   patch "/experiences/:id" => "experiences#update"
   delete "/experiences/:id" => "experiences#destroy"
 
+  get "/capstones" => "capstones#index"
 end

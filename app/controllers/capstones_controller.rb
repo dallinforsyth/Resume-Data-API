@@ -1,7 +1,6 @@
 class CapstonesController < ApplicationController
   def index
-    @capstones = c
-  end
-  def show 
+    @capstones = Capstone.all
+    render :index
   end
 end

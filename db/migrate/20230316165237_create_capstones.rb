@@ -5,7 +5,7 @@ class CreateCapstones < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :url
       t.string :screenshot
-      t.string :student_id
+      t.integer :student_id
 
       t.timestamps
     end
