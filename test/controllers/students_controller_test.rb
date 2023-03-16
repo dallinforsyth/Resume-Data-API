@@ -42,4 +42,11 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_equal student.github_url, data["github_url"]
     assert_equal student.photo, data["photo"]
   end
+
+  test "destroy" do
+    assert_difference "Student.count", -1 do
+      delete "/students/#{Student.first.id}.json"
+      assert_response 200
+    end
+  end
 end
