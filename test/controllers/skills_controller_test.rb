@@ -26,4 +26,13 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal ["id", "name", "created_at", "updated_at"], data.keys
   end
+
+  test "update" do
+    skill = Skill.first
+    patch "/skills/#{skill.id}.json", params: { name: "Updated name" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "Updated name", data["name"]
+  end
 end
