@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  Education
+  get "/students" => "students#index"
+  post "/students" => "students#create"
+  get "/students/:id" => "students#show"
+  patch "/students/:id" => "students#update"
+  delete "/students/:id" => "students#destroy"
+  post "/sessions" => "sessions#create"
+  
   get "/educations" => "educations#index"
   get "/educations/:id" => "educations#show"
   post "/educations" => "educations#create"
@@ -17,7 +23,7 @@ Rails.application.routes.draw do
   get "/skills/:id" => "skills#show"
   patch "/skills/:id" => "skills#update"
   delete "/skills/:id" => "skills#destroy"
-
+  
   get "/capstones" => "capstones#index"
   get "/capstones/:id" => "capstones#show"
   post "/capstones" => "capstones#create"
