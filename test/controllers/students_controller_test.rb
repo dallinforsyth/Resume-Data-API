@@ -11,7 +11,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Student.count", 1 do
-      post "/students.json", params: { first_name: "Michael", last_name: "Scott", email: "Michaelscott@dundermifflin.com", phone_number: "888-555-5556", short_bio: "I sell the best paper at the best paper company in the world", linkedin_url: "https://www.linkedin/in/michaelscott", twitter_handle: "https://www.twitter.com/michaelscott", personal_blog_website_url: "test.com", online_resume_url: "test.com", github_url: "https://github.com/michaelscott", photo: "test.jpg", password: "password", password_confirmation: "password" }
+      post "/students.json", params: { first_name: "Michael", last_name: "Scott", email: "Michaelscott@dundermifflin.com", phone_number: "888-555-5556", short_bio: "I sell the best paper at the best paper company in the world", linkedin_url: "https://www.linkedin/in/michaelscott", twitter_handle: "https://www.twitter.com/michaelscott", personal_blog_website_url: "test.com", online_resume_url: "test.com", github_url: "https://github.com/michaelscott", photo: "test.jpg", password: "password", password_confirmation: "password"}
       assert_response 200
     end
   end
@@ -21,7 +21,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["id", "first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "personal_blog_website_url", "online_resume_url", "github_url", "photo", "created_at", "updated_at"], data.keys
+    assert_equal ["id", "first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "personal_blog_website_url", "online_resume_url", "github_url", "photo", "experiences", "educations", "skills", "capstones", "created_at", "updated_at"], data.keys
   end
 
   test "update" do

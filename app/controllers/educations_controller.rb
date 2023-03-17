@@ -16,6 +16,7 @@ class EducationsController < ApplicationController
       degree: params[:degree],
       university_name: params[:university_name],
       details: params[:details],
+      student_id: params[:student_id],
     )
     render :show
   end

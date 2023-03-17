@@ -14,7 +14,8 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Skill.count", 1 do
-      post "/skills.json", params: { name: "lake" }
+      student = Student.first
+      post "/skills.json", params: { name: "lake", student_id: student.id }
       assert_response 200
     end
   end
