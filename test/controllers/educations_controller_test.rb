@@ -11,7 +11,8 @@ class EducationsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Education.count", 1 do
-      post "/educations.json", params: { start_date: "03/05/10", end_date: "04/02/46", degree: "Masters", university_name: "Michagan State", details: "Dont forget to bring your pizza's" }
+      student = Student.first
+      post "/educations.json", params: { start_date: "03/05/10", end_date: "04/02/46", degree: "Masters", university_name: "Michagan State", details: "Dont forget to bring your pizza's", student_id: student.id  }
       assert_response 200
     end
   end

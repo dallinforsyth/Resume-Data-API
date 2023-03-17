@@ -7,6 +7,7 @@ class SkillsController < ApplicationController
   def create
     @skill = Skill.create(
       name: params[:name],
+      student_id: params[:student_id],
     )
     render :show
   end

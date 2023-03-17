@@ -11,7 +11,8 @@ class CapstonesControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Capstone.count", 1 do
-      post "/capstones.json", params: { name: "Bill & Teds phonebooth", description: "allows user to transed time & visit other timelines", url: "https://cubicallbooth.com/wp-content/uploads/2020/01/Cubicall_Bill_Ted_PhoneBooth_a-closed.jpg", screenshot: "https://s3.crackedcdn.com/phpimages/article/3/2/4/739324.jpg?v=2" }
+      student = Student.first
+      post "/capstones.json", params: { name: "Bill & Teds phonebooth", description: "allows user to transed time & visit other timelines", url: "https://cubicallbooth.com/wp-content/uploads/2020/01/Cubicall_Bill_Ted_PhoneBooth_a-closed.jpg", screenshot: "https://s3.crackedcdn.com/phpimages/article/3/2/4/739324.jpg?v=2", student_id: student.id  }
       assert_response 200
     end
   end

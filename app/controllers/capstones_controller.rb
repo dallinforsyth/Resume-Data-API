@@ -15,6 +15,7 @@ class CapstonesController < ApplicationController
       description: params[:description],
       url: params[:url],
       screenshot: params[:screenshot],
+      student_id: params[:student_id],
     )
     render :show
   end
